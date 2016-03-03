@@ -19,6 +19,7 @@ typedef NS_ENUM(NSInteger, JCRGamepadType) {
 
 typedef void (^JCRGameControllerPauseBlock)(GCController* controller);
 typedef void (^JCRGameControllerButtonValueChangeBlock)(GCControllerButtonInput *button, float value, BOOL pressed);
+typedef void (^JCRGameControllerButtonPressedChangeBlock)(GCControllerButtonInput *button, float value, BOOL pressed);
 typedef void (^JCRGameControllerDirectionPadBlock)(GCControllerDirectionPad *dpad, float xValue, float yValue);
 
 @property (nonatomic,strong) GCController *controller;
@@ -35,6 +36,16 @@ typedef void (^JCRGameControllerDirectionPadBlock)(GCControllerDirectionPad *dpa
 @property (copy) JCRGameControllerButtonValueChangeBlock rightShoulderButtonValueChangeBlock;
 @property (copy) JCRGameControllerButtonValueChangeBlock leftTriggerButtonValueChangeBlock;
 @property (copy) JCRGameControllerButtonValueChangeBlock rightTriggerButtonValueChangeBlock;
+
+@property (copy) JCRGameControllerButtonPressedChangeBlock aButtonPressedChangeBlock;
+@property (copy) JCRGameControllerButtonPressedChangeBlock bButtonPressedChangeBlock;
+@property (copy) JCRGameControllerButtonPressedChangeBlock xButtonPressedChangeBlock;
+@property (copy) JCRGameControllerButtonPressedChangeBlock yButtonPressedChangeBlock;
+
+@property (copy) JCRGameControllerButtonPressedChangeBlock leftShoulderButtonPressedChangeBlock;
+@property (copy) JCRGameControllerButtonPressedChangeBlock rightShoulderButtonPressedChangeBlock;
+@property (copy) JCRGameControllerButtonPressedChangeBlock leftTriggerButtonPressedChangeBlock;
+@property (copy) JCRGameControllerButtonPressedChangeBlock rightTriggerButtonPressedChangeBlock;
 
 @property (copy) JCRGameControllerDirectionPadBlock dPadBlock;
 @property (copy) JCRGameControllerDirectionPadBlock leftThumbstickBlock;
@@ -54,6 +65,16 @@ typedef void (^JCRGameControllerDirectionPadBlock)(GCControllerDirectionPad *dpa
 - (void)setRightShoulderButtonValueChangeBlock:(JCRGameControllerButtonValueChangeBlock)rightShoulderButtonValueChangeBlock;
 - (void)setLeftTriggerButtonValueChangeBlock:(JCRGameControllerButtonValueChangeBlock)leftTriggerButtonValueChangeBlock;
 - (void)setRightTriggerButtonValueChangeBlock:(JCRGameControllerButtonValueChangeBlock)rightTriggerButtonValueChangeBlock;
+
+- (void)setAButtonPressedChangeBlock:(JCRGameControllerButtonPressedChangeBlock)aButtonPressedChangeBlock;
+- (void)setBButtonPressedChangeBlock:(JCRGameControllerButtonPressedChangeBlock)bButtonPressedChangeBlock;
+- (void)setXButtonPressedChangeBlock:(JCRGameControllerButtonPressedChangeBlock)xButtonPressedChangeBlock;
+- (void)setYButtonPressedChangeBlock:(JCRGameControllerButtonPressedChangeBlock)yButtonPressedChangeBlock;
+
+- (void)setLeftShoulderButtonPressedChangeBlock:(JCRGameControllerButtonPressedChangeBlock)leftShoulderButtonPressedChangeBlock;
+- (void)setRightShoulderButtonPressedChangeBlock:(JCRGameControllerButtonPressedChangeBlock)rightShoulderButtonPressedChangeBlock;
+- (void)setLeftTriggerButtonPressedChangeBlock:(JCRGameControllerButtonPressedChangeBlock)leftTriggerButtonPressedChangeBlock;
+- (void)setRightTriggerButtonPressedChangeBlock:(JCRGameControllerButtonPressedChangeBlock)rightTriggerButtonPressedChangeBlock;
 
 - (void)setDPadBlock:(JCRGameControllerDirectionPadBlock)dPadBlock;
 - (void)setLeftThumbstickBlock:(JCRGameControllerDirectionPadBlock)leftThumbstickBlock;

@@ -109,6 +109,47 @@
         }
     }];
     
+    [a setPressedChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
+        if ([self aButtonPressedChangeBlock] && pressed) {
+            self.aButtonPressedChangeBlock(button, value, pressed);
+        }
+    }];
+    [b setPressedChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
+        if ([self bButtonPressedChangeBlock] && pressed) {
+            self.bButtonPressedChangeBlock(button, value, pressed);
+        }
+    }];
+    [x setPressedChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
+        if ([self xButtonPressedChangeBlock] && pressed) {
+            self.xButtonPressedChangeBlock(button, value, pressed);
+        }
+    }];
+    [y setPressedChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
+        if ([self yButtonPressedChangeBlock] && pressed) {
+            self.yButtonPressedChangeBlock(button, value, pressed);
+        }
+    }];
+    [leftShoulder setPressedChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
+        if ([self leftShoulderButtonPressedChangeBlock] && pressed) {
+            self.leftShoulderButtonPressedChangeBlock(button,value,pressed);
+        }
+    }];
+    [leftTrigger setPressedChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
+        if ([self leftTriggerButtonPressedChangeBlock] && pressed) {
+            self.leftTriggerButtonPressedChangeBlock(button,value,pressed);
+        }
+    }];
+    [rightShoulder setPressedChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
+        if ([self rightShoulderButtonPressedChangeBlock] && pressed) {
+            self.rightShoulderButtonPressedChangeBlock(button,value,pressed);
+        }
+    }];
+    [rightTrigger setPressedChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
+        if ([self rightTriggerButtonPressedChangeBlock] && pressed) {
+            self.rightTriggerButtonPressedChangeBlock(button,value,pressed);
+        }
+    }];
+    
     // DPad and sticks
     [dPad setValueChangedHandler:^(GCControllerDirectionPad *dpad, float xValue, float yValue){
         if ([self dPadBlock]) {
@@ -166,6 +207,38 @@
     [rightShoulder setValueChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
         if ([self rightShoulderButtonValueChangeBlock]) {
             self.rightShoulderButtonValueChangeBlock(button,value,pressed);
+        }
+    }];
+    
+    
+    [a setPressedChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
+        if ([self aButtonPressedChangeBlock] && pressed) {
+            self.aButtonPressedChangeBlock(button, value, pressed);
+        }
+    }];
+    [b setPressedChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
+        if ([self bButtonPressedChangeBlock] && pressed) {
+            self.bButtonPressedChangeBlock(button, value, pressed);
+        }
+    }];
+    [x setPressedChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
+        if ([self xButtonPressedChangeBlock] && pressed) {
+            self.xButtonPressedChangeBlock(button, value, pressed);
+        }
+    }];
+    [y setPressedChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
+        if ([self yButtonPressedChangeBlock] && pressed) {
+            self.yButtonPressedChangeBlock(button, value, pressed);
+        }
+    }];
+    [leftShoulder setPressedChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
+        if ([self leftShoulderButtonPressedChangeBlock] && pressed) {
+            self.leftShoulderButtonPressedChangeBlock(button,value,pressed);
+        }
+    }];
+    [rightShoulder setPressedChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
+        if ([self rightShoulderButtonPressedChangeBlock] && pressed) {
+            self.rightShoulderButtonPressedChangeBlock(button,value,pressed);
         }
     }];
     
