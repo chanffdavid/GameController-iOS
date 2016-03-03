@@ -27,8 +27,8 @@
     _controller = controller;
     
     [[self controller] setControllerPausedHandler:^(GCController *controller) {
-        if ([self pauseButtonBlock]) {
-            self.pauseButtonBlock(controller);
+        if ([self PauseButtonBlock]) {
+            self.PauseButtonBlock(controller);
         }
     }];
     
@@ -69,43 +69,43 @@
     GCControllerDirectionPad *rightThumbstick = [[self extendedGamepad] rightThumbstick];
     
     [a setValueChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
-        if ([self aButtonBlock]) {
-            self.aButtonBlock(button, value, pressed);
+        if ([self aButtonValueChangeBlock]) {
+            self.aButtonValueChangeBlock(button, value, pressed);
         }
     }];
     [b setValueChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
-        if ([self bButtonBlock]) {
-            self.bButtonBlock(button, value, pressed);
+        if ([self bButtonValueChangeBlock]) {
+            self.bButtonValueChangeBlock(button, value, pressed);
         }
     }];
     [x setValueChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
-        if ([self xButtonBlock]) {
-            self.xButtonBlock(button, value, pressed);
+        if ([self xButtonValueChangeBlock]) {
+            self.xButtonValueChangeBlock(button, value, pressed);
         }
     }];
     [y setValueChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
-        if ([self yButtonBlock]) {
-            self.yButtonBlock(button, value, pressed);
+        if ([self yButtonValueChangeBlock]) {
+            self.yButtonValueChangeBlock(button, value, pressed);
         }
     }];
     [leftShoulder setValueChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
-        if ([self leftShoulderButtonBlock]) {
-            self.leftShoulderButtonBlock(button,value,pressed);
+        if ([self leftShoulderButtonValueChangeBlock]) {
+            self.leftShoulderButtonValueChangeBlock(button,value,pressed);
         }
     }];
     [leftTrigger setValueChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
-        if ([self leftTriggerButtonBlock]) {
-            self.leftTriggerButtonBlock(button,value,pressed);
+        if ([self leftTriggerButtonValueChangeBlock]) {
+            self.leftTriggerButtonValueChangeBlock(button,value,pressed);
         }
     }];
     [rightShoulder setValueChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
-        if ([self rightShoulderButtonBlock]) {
-            self.rightShoulderButtonBlock(button,value,pressed);
+        if ([self rightShoulderButtonValueChangeBlock]) {
+            self.rightShoulderButtonValueChangeBlock(button,value,pressed);
         }
     }];
     [rightTrigger setValueChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
-        if ([self rightTriggerButtonBlock]) {
-            self.rightTriggerButtonBlock(button,value,pressed);
+        if ([self rightTriggerButtonValueChangeBlock]) {
+            self.rightTriggerButtonValueChangeBlock(button,value,pressed);
         }
     }];
     
@@ -139,33 +139,33 @@
     GCControllerDirectionPad *dPad = [[self gamepad] dpad];
     
     [a setValueChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
-        if ([self aButtonBlock]) {
-            self.aButtonBlock(button, value, pressed);
+        if ([self aButtonValueChangeBlock]) {
+            self.aButtonValueChangeBlock(button, value, pressed);
         }
     }];
     [b setValueChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
-        if ([self bButtonBlock]) {
-            self.bButtonBlock(button, value, pressed);
+        if ([self bButtonValueChangeBlock]) {
+            self.bButtonValueChangeBlock(button, value, pressed);
         }
     }];
     [x setValueChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
-        if ([self xButtonBlock]) {
-            self.xButtonBlock(button, value, pressed);
+        if ([self xButtonValueChangeBlock]) {
+            self.xButtonValueChangeBlock(button, value, pressed);
         }
     }];
     [y setValueChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
-        if ([self yButtonBlock]) {
-            self.yButtonBlock(button, value, pressed);
+        if ([self yButtonValueChangeBlock]) {
+            self.yButtonValueChangeBlock(button, value, pressed);
         }
     }];
     [leftShoulder setValueChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
-        if ([self leftShoulderButtonBlock]) {
-            self.leftShoulderButtonBlock(button,value,pressed);
+        if ([self leftShoulderButtonValueChangeBlock]) {
+            self.leftShoulderButtonValueChangeBlock(button,value,pressed);
         }
     }];
     [rightShoulder setValueChangedHandler:^(GCControllerButtonInput *button, float value, BOOL pressed){
-        if ([self rightShoulderButtonBlock]) {
-            self.rightShoulderButtonBlock(button,value,pressed);
+        if ([self rightShoulderButtonValueChangeBlock]) {
+            self.rightShoulderButtonValueChangeBlock(button,value,pressed);
         }
     }];
     

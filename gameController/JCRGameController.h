@@ -18,23 +18,23 @@ typedef NS_ENUM(NSInteger, JCRGamepadType) {
 @interface JCRGameController : NSObject
 
 typedef void (^JCRGameControllerPauseBlock)(GCController* controller);
-typedef void (^JCRGameControllerButtonBlock)(GCControllerButtonInput *button, float value, BOOL pressed);
+typedef void (^JCRGameControllerButtonValueChangeBlock)(GCControllerButtonInput *button, float value, BOOL pressed);
 typedef void (^JCRGameControllerDirectionPadBlock)(GCControllerDirectionPad *dpad, float xValue, float yValue);
 
 @property (nonatomic,strong) GCController *controller;
 @property (nonatomic) JCRGamepadType gamePadType;
 
-@property (copy) JCRGameControllerPauseBlock pauseButtonBlock;
+@property (copy) JCRGameControllerPauseBlock PauseButtonBlock;
 
-@property (copy) JCRGameControllerButtonBlock aButtonBlock;
-@property (copy) JCRGameControllerButtonBlock bButtonBlock;
-@property (copy) JCRGameControllerButtonBlock xButtonBlock;
-@property (copy) JCRGameControllerButtonBlock yButtonBlock;
+@property (copy) JCRGameControllerButtonValueChangeBlock aButtonValueChangeBlock;
+@property (copy) JCRGameControllerButtonValueChangeBlock bButtonValueChangeBlock;
+@property (copy) JCRGameControllerButtonValueChangeBlock xButtonValueChangeBlock;
+@property (copy) JCRGameControllerButtonValueChangeBlock yButtonValueChangeBlock;
 
-@property (copy) JCRGameControllerButtonBlock leftShoulderButtonBlock;
-@property (copy) JCRGameControllerButtonBlock rightShoulderButtonBlock;
-@property (copy) JCRGameControllerButtonBlock leftTriggerButtonBlock;
-@property (copy) JCRGameControllerButtonBlock rightTriggerButtonBlock;
+@property (copy) JCRGameControllerButtonValueChangeBlock leftShoulderButtonValueChangeBlock;
+@property (copy) JCRGameControllerButtonValueChangeBlock rightShoulderButtonValueChangeBlock;
+@property (copy) JCRGameControllerButtonValueChangeBlock leftTriggerButtonValueChangeBlock;
+@property (copy) JCRGameControllerButtonValueChangeBlock rightTriggerButtonValueChangeBlock;
 
 @property (copy) JCRGameControllerDirectionPadBlock dPadBlock;
 @property (copy) JCRGameControllerDirectionPadBlock leftThumbstickBlock;
@@ -43,17 +43,17 @@ typedef void (^JCRGameControllerDirectionPadBlock)(GCControllerDirectionPad *dpa
 // The only reason we have these set-functions is because xCode isn't doing
 // proper auto completion on the above properties.
 
-- (void)setPauseButtonBlock:(JCRGameControllerPauseBlock)pauseButtonBlock;
+- (void)setPauseButtonBlock:(JCRGameControllerPauseBlock)PauseButtonBlock;
 
-- (void)setAButtonBlock:(JCRGameControllerButtonBlock)aButtonBlock;
-- (void)setBButtonBlock:(JCRGameControllerButtonBlock)bButtonBlock;
-- (void)setXButtonBlock:(JCRGameControllerButtonBlock)xButtonBlock;
-- (void)setYButtonBlock:(JCRGameControllerButtonBlock)yButtonBlock;
+- (void)setAButtonValueChangeBlock:(JCRGameControllerButtonValueChangeBlock)aButtonValueChangeBlock;
+- (void)setBButtonValueChangeBlock:(JCRGameControllerButtonValueChangeBlock)bButtonValueChangeBlock;
+- (void)setXButtonValueChangeBlock:(JCRGameControllerButtonValueChangeBlock)xButtonValueChangeBlock;
+- (void)setYButtonValueChangeBlock:(JCRGameControllerButtonValueChangeBlock)yButtonValueChangeBlock;
 
-- (void)setLeftShoulderButtonBlock:(JCRGameControllerButtonBlock)leftShoulderButtonBlock;
-- (void)setRightShoulderButtonBlock:(JCRGameControllerButtonBlock)rightShoulderButtonBlock;
-- (void)setLeftTriggerButtonBlock:(JCRGameControllerButtonBlock)leftTriggerButtonBlock;
-- (void)setRightTriggerButtonBlock:(JCRGameControllerButtonBlock)rightTriggerButtonBlock;
+- (void)setLeftShoulderButtonValueChangeBlock:(JCRGameControllerButtonValueChangeBlock)leftShoulderButtonValueChangeBlock;
+- (void)setRightShoulderButtonValueChangeBlock:(JCRGameControllerButtonValueChangeBlock)rightShoulderButtonValueChangeBlock;
+- (void)setLeftTriggerButtonValueChangeBlock:(JCRGameControllerButtonValueChangeBlock)leftTriggerButtonValueChangeBlock;
+- (void)setRightTriggerButtonValueChangeBlock:(JCRGameControllerButtonValueChangeBlock)rightTriggerButtonValueChangeBlock;
 
 - (void)setDPadBlock:(JCRGameControllerDirectionPadBlock)dPadBlock;
 - (void)setLeftThumbstickBlock:(JCRGameControllerDirectionPadBlock)leftThumbstickBlock;

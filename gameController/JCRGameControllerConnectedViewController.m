@@ -68,35 +68,35 @@
         [self __logMessage:@"Pause!"];
     }];
     
-    [gameController setAButtonBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
+    [gameController setAButtonValueChangeBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
         [self __logMessage:@"A"];
     }];
     
-    [gameController setBButtonBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
+    [gameController setBButtonValueChangeBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
         [self __logMessage:@"B"];
     }];
     
-    [gameController setXButtonBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
+    [gameController setXButtonValueChangeBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
         [self __logMessage:@"X"];
     }];
     
-    [gameController setYButtonBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
+    [gameController setYButtonValueChangeBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
         [self __logMessage:@"Y"];
     }];
     
-    [gameController setLeftShoulderButtonBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
+    [gameController setLeftShoulderButtonValueChangeBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
         [self __logMessage:@"Left shoulder"];
     }];
     
-    [gameController setRightShoulderButtonBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
+    [gameController setRightShoulderButtonValueChangeBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
         [self __logMessage:@"Right shoulder"];
     }];
     
-    [gameController setLeftTriggerButtonBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
+    [gameController setLeftTriggerButtonValueChangeBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
         [self __logMessage:@"Left trigger"];
     }];
     
-    [gameController setRightTriggerButtonBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
+    [gameController setRightTriggerButtonValueChangeBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
         [self __logMessage:@"Right trigger"];
     }];
     
