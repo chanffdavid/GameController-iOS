@@ -100,6 +100,38 @@
         [self __logMessage:@"Right trigger"];
     }];
     
+    [gameController setAButtonPressedChangeBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
+        [self __logMessage:@"A pressed"];
+    }];
+    
+    [gameController setBButtonPressedChangeBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
+        [self __logMessage:@"B pressed"];
+    }];
+    
+    [gameController setXButtonPressedChangeBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
+        [self __logMessage:@"X pressed"];
+    }];
+    
+    [gameController setYButtonPressedChangeBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
+        [self __logMessage:@"Y pressed"];
+    }];
+    
+    [gameController setLeftShoulderButtonPressedChangeBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
+        [self __logMessage:@"Left shoulder pressed"];
+    }];
+    
+    [gameController setRightShoulderButtonPressedChangeBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
+        [self __logMessage:@"Right shoulder pressed"];
+    }];
+    
+    [gameController setLeftTriggerButtonPressedChangeBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
+        [self __logMessage:@"Left trigger pressed"];
+    }];
+    
+    [gameController setRightTriggerButtonPressedChangeBlock:^(GCControllerButtonInput *button, float value, BOOL pressed) {
+        [self __logMessage:@"Right trigger pressed"];
+    }];
+    
     [gameController setLeftThumbstickBlock:^(GCControllerDirectionPad *dpad, float xValue, float yValue) {
         [self __logMessage:[NSString stringWithFormat:@"Left Thumbstick -- X: %f || F: %f", xValue, yValue]];
     }];
