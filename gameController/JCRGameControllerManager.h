@@ -13,8 +13,10 @@
 @protocol JCRGameControllerManagerDelegate <NSObject>
 
 @required
-- (void)gameControllerManager:(JCRGameControllerManager*)manager gameControllerConnected:(JCRGameController*)gameController;
-- (void)gameControllerManagerGameControllerDisconnected:(JCRGameControllerManager*)manager;
+
+- (void)connectedGameController:(JCRGameController *)gameController;
+- (void)disconnectedGameController:(JCRGameController *)gameController;
+
 
 @end
 
@@ -23,6 +25,7 @@
 @property (nonatomic,assign) id <JCRGameControllerManagerDelegate> delegate;
 
 + (instancetype)sharedInstance;
-- (NSArray *)connectedGameControllers;
+- (JCRGameController *)firstReadyGameController;
+- (NSDictionary *)connectedJCRGameControllers;
 
 @end
